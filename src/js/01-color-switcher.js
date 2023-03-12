@@ -8,11 +8,15 @@ function getRandomHexColor() {
 
 startBtn.addEventListener("click", () => {
  timerId = setInterval(() => {
+
     const body = document.querySelector('body')
     body.style.background = getRandomHexColor()
-  }, 1000);
+  }, 
+  1000);
+  startBtn.disabled = true;
 });
 
 stopBtn.addEventListener("click", () => {
   clearInterval(timerId);
+  startBtn.disabled = false;
 });
